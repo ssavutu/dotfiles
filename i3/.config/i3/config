@@ -7,12 +7,12 @@ font pango:monospace 8
 # Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id ~/.config/i3/natural_scrolling.sh
-exec_always --no-startup-id feh -s --bg-scale /home/sachin/Pictures/wok.jpg
+exec_always --no-startup-id feh -s --bg-scale /home/sachin/Pictures/Wallpapers/wok.jpg
 exec_always --no-startup-id ~/.config/i3/polybar.sh
 exec_always --no-startup-id dunst
 exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id nm-applet
+exec_always --no-startup-id nm-applet --indicator
 
 # Gaps and Windowbars
 gaps inner 10
@@ -29,6 +29,11 @@ bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+bindsym XF86KbdBrightnessUp exec --no-startup-id brightnessctl -d asus::kbd_backlight set +5%
+bindsym XF86KbdBrightnessDown exec --no-startup-id brightnessctl -d asus::kbd_backlight set 5%-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
